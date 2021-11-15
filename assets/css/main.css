@@ -1,0 +1,349 @@
+
+/*-----------------------------------*\
+  #main.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2021 @codewithsadee
+ */
+
+/**
+ * TABLE OF CONTENTS
+ *
+ * SETTINGS
+ * Global.........................Globally available `variables` and config.
+ * 
+ * GENERIC
+ * Reset..........................Reset default `spacing` and `box-sizing` etc.
+ *
+ * BASE
+ * Headings.......................H1-H6 styles.
+ *
+ * MAIN STYLE
+ * Header.........................`header` & all child `elements`.
+ * About..........................`about` & all child `elements`.
+ * Product........................`product` & all child `elements`.
+ * Footer.........................`footer` & all child `elements`.
+ */
+
+
+
+
+
+/*-----------------------------------*\
+  #GLOBAL
+\*-----------------------------------*/
+
+/**
+ * import global variables and config 
+ */
+
+@import url(./_variables.css);
+
+
+
+
+
+/*-----------------------------------*\ 
+  #RESET
+\*-----------------------------------*/
+
+/**
+ * reset all default style 
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { 
+  font-family: var(--ff-alata); 
+  font-size: var(--fs-regular);
+}
+
+li { list-style: none; }
+
+a { 
+  text-decoration: none; 
+  display: inline-block;
+  color: var(--white);
+}
+
+
+
+
+
+/*-----------------------------------*\ 
+  #HEADINGS
+\*-----------------------------------*/
+
+/**
+ * all heading styles
+ */
+
+h1,h2,h3 { 
+  font-family: var(--ff-josefin-sans);
+  font-weight: var(--fw-300);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+
+
+
+/*-----------------------------------*\ 
+  #HEADER 
+\*-----------------------------------*/
+
+/**
+ * main container style 
+ */
+
+.main-container {
+  max-width: 1440px;
+  margin: auto;
+  background-color: #fff;
+}
+
+/**
+ * header section style 
+ */
+
+header {
+  background: #0006 url(../images/desktop/image-hero.jpg) no-repeat center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  padding: 65px var(--px);
+  margin-bottom: var(--mb);
+}
+
+/**
+ * navbar style 
+ */
+
+.navbar { 
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 120px;
+}
+
+/**
+ * mobile-nav-brand style 
+ */
+
+.mobile-nav-brand { display: none; }
+
+/**
+ * navbar nav
+ */
+
+nav ul{ 
+  display: grid; 
+  grid-template-columns: repeat(5, minmax(min-content, min-content));
+  grid-gap: 32px;
+}
+
+nav ul li { position: relative; }
+
+nav ul li::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left:    50% ;
+  width:    0  ;
+  height:   2px;
+  transform: translateX(-50%);
+  background: var(--white);
+}
+
+nav ul li:hover::after { width: 25px; }
+
+/**
+ * mobile nav-toggler style
+ */
+
+.nav-toggler { display: none; }
+
+/**
+ * banner style  
+ */
+
+.banner h1 { 
+  max-width: 650px;
+  padding: 38px;
+  margin-bottom:  80px;
+  border: 3px solid var(--white);
+  font-size: var(--fs-h1);
+  color: var(--white);
+}
+
+
+
+
+
+/*-----------------------------------*\ 
+  #ABOUT 
+\*-----------------------------------*/
+
+/**
+ * about section style
+ */
+
+.about {
+  position: relative;
+  padding: 0 var(--px);
+  margin-bottom: var(--mb);
+}
+
+.about .img-box img { display: block; }
+
+/**
+ * content box style
+ */
+
+.about .content-box {
+  position: absolute;
+  top: 180px;
+  left: 50% ;
+  padding: 95px;
+  max-width: 640px;
+  background: var(--white);
+}
+
+.about .content-box h2 {
+  font-size: var(--fs-h2);
+  margin-bottom: 30px;
+}
+
+.about .content-box p {
+  color: var(--dark-gray);
+  line-height: 1.7;
+}
+
+
+
+
+
+/*-----------------------------------*\ 
+  #PRODUCT 
+\*-----------------------------------*/
+
+/**
+ * product section style
+ */
+
+.product {
+  position: relative;
+  padding: 0 var(--px);
+  margin-bottom: var(--mb);
+}
+
+.product h2 {
+  font-size: var(--fs-h2);
+  margin-bottom: 80px;
+}
+
+/**
+ * product grid style
+ */
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  place-content: center;
+  grid-gap: 30px;
+}
+
+.product-card {
+  position: relative;
+  height: 450px;
+  cursor: pointer;
+}
+
+.product-card img {
+  height: 100%;
+  width:  100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.product-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, #000b);
+}
+
+.product-card:hover::after { background: linear-gradient(180deg, #fffa 40%, #555a); }
+
+.product-card h3 {
+  position: absolute;
+  bottom: 35px;
+  left:   40px;
+  font-size: var(--fs-h3);
+  color: var(--white);
+  z-index: 5;
+}
+
+.product-card:hover h3 { color: var(--black); }
+
+
+.btn-primary {
+  position: absolute;
+  right: var(--px);
+  top:   5px;
+  padding: 8px 35px;
+  letter-spacing: 5px;
+  border: 1px solid var(--black);
+  color: var(--black);
+}
+
+.btn-primary:hover {
+  color: var(--white);
+  background: var(--black);
+}
+
+
+
+
+
+/*-----------------------------------*\ 
+  #FOOTER 
+\*-----------------------------------*/
+
+/**
+ * footer section style
+ */
+
+footer {
+  background-color: var(--black);
+  padding: 45px var(--px);
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-brand { margin-bottom: 20px; }
+
+.footer-brand img { max-width: 140px; }
+
+/**
+ * footer nav styled with navbar nav in 
+ * section: #HEADER
+ */
+
+.footer-right { text-align: right; }
+
+.social-links { margin-bottom: 20px; }
+
+.social-links a {
+  font-size: 1.8em;
+  color: var(--white);
+}
+
+.social-links a:not(:last-child) { margin-right: 12px; }
+
+.copyright { color: var(--vary-dark-gray); }
