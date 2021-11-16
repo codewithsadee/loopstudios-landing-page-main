@@ -166,7 +166,10 @@ nav ul li:hover::after { width: 25px; }
  * mobile nav-toggler style
  */
 
-.nav-toggler { display: none; }
+.nav-toggler { 
+  cursor: pointer;
+  display: none; 
+}
 
 /**
  * banner style  

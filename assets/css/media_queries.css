@@ -76,6 +76,8 @@
   }
 
   .mobile-nav-brand img { max-width: 145px; }
+
+  .mobile-nav-brand .close-btn { cursor: pointer; }
   
   /**
    * navbar-nav responsive for small screen
